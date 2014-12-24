@@ -115,8 +115,35 @@ We define the mean radius as $\sqrt{\langle r^2 \rangle}$.
 
 \subsection*{Part B}
 
-From experiments we can approximate the charge radius to be $R = r_0 \sqrt[3]{A}$ for $r_0 \approx \SI{1.2}{\femto\metre}$. For $A = 58$ we get $R \approx \SI{4.6}{\femto\metre}$. Using the result from the previous exercise we get $\sqrt{\langle r^2 \rangle} \approx \SI{3.6}{\femto\metre}$.
+The differential cross section is given by
+\[
+\left( \frac{d \sigma}{d \Omega} \right)_\text{exp} = \left( \frac{d \sigma}{d \Omega} \right)_\text{Rutherford} | F(q^2)|^2 \left( 1 - \beta^2 \sin^2\left( \frac{\theta}{2} \right) \right)
+\]
+where Rutherford's cross section in turn is given by
+\[
+\left( \frac{d \sigma}{d \Omega} \right)_\text{Rutherford} = \left( \frac{Z_1 Z_2 e^2}{8 \varepsilon_0 \pi E} \right)^2 \frac{1}{\sin^4 \left( \frac{\theta}{2} \right)}.
+\]
+From exercise 1.3 we obtain the following form factor:
+\[
+|F(q^2)|^2 = \left( 1-\frac{q^2}{6\hbar^2}\langle r^2 \rangle \right)^2 .
+\]
+By combining the equations above we get
+\[
+\left( \frac{d \sigma}{d \Omega} \right)_\text{exp} = \left( \frac{Z_1 Z_2 e^2}{8 \varepsilon_0 \pi E} \right)^2 \frac{1}{\sin^4 \left( \frac{\theta}{2} \right)} \left( 1-\frac{q^2}{6\hbar^2}\langle r^2 \rangle \right)^2 \left( 1 - \beta^2 \sin^2\left( \frac{\theta}{2} \right) \right)
+\]
+and solving for the mean square radius gives us
+\[
+\langle r^2 \rangle = \frac{6\hbar^2}{q^2} \left( 1 - \left( \frac{8\varepsilon_0\pi E}{Z_1 Z_2 e^2} \right) \sin^2 \left(\frac{\theta}{2} \right) \sqrt{ \frac{\left( \frac{d \sigma}{d \Omega} \right)_\text{exp}}{\left( 1 - \beta^2 \sin^2\left( \frac{\theta}{2} \right) \right)} } \right)
+\]
 
+By assuming $m_e c^2 << E$, we can assume $\beta^2 \approx 1$. Furthermore, the scattering angle is related to the transferred momentum $q = 2k\sin\left( \theta /2 \right)$ where $k = p/\hbar$ is the wave number and $p = E/c$ is the momentum. We have
+\[
+\sin\left( \frac{\theta}{2} \right) = \left( \frac{qc\hbar}{2E} \right)^2 .
+\]
+We get the value $q \approx \SI{0.5}{\per\femto\metre}$  (transferred momentum divided by $\hbar$) from figure 4.6 in the book. Similarly, we get $\left( \frac{d \sigma}{d \Omega} \right)_\text{exp} \approx \SI{10}{mb\per sr}$ For $E \approx \SI{450}{\MeV}$. For $Z_1 = 1$ and $Z_2 = 28$ we get $\langle r^2\rangle \approx \SI{1.039e-29}{\meter\square}$ and
+\[
+\langle r^2 \rangle^{1/2} \approx \SI{3.22}{fm}
+\]
 \section*{Problem 3}
 
 We know that the count rate $R$ for the detector is related to the differential cross section by
